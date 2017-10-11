@@ -10,4 +10,6 @@ public interface IProduitService {
 	Produit getProduitById(Integer produitId);
 	Produit getProduitByUpc(String monUpc);
 	Produit doUpdate(Produit monProduit);
+	Produit doAdd(Produit monProduit);
+	void doDelete(Produit produit);
 }
