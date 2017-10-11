@@ -107,10 +107,13 @@ public class ProduitController {
 
     }
 	
-	@GetMapping("/delete/{id_produit}")
+	@GetMapping("/delete/id/{id_produit}")
 	public ResponseEntity delete(@PathVariable("id_produit") final Integer idProduit) {
 
-		produitService.doDelete(produit);
+		Produit deleteProduit = new Produit();
+		deleteProduit.setIdProduit(idProduit);
+		
+		produitService.doDelete(deleteProduit);
 
 		return new ResponseEntity<>(HttpStatus.OK);
 
