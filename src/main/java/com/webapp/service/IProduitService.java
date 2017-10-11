@@ -12,4 +12,5 @@ public interface IProduitService {
 	Produit doUpdate(Produit monProduit);
 	Produit doAdd(Produit monProduit);
 	void doDelete(Produit produit);
+	void doDeleteByUpc(Produit produit);
 }

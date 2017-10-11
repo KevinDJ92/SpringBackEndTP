@@ -119,6 +119,18 @@ public class ProduitController {
 
 	}
 	
+	@GetMapping("/delete/upc/{upc}")
+	public ResponseEntity deleteByUpc(@PathVariable("upc") final String monUpc) {
+
+		Produit deleteProduitUpc = new Produit();
+		deleteProduitUpc.setUpc(monUpc.toString());
+		
+		produitService.doDeleteByUpc(deleteProduitUpc);
+
+		return new ResponseEntity<>(HttpStatus.OK);
+
+	}
+	
 //	public List<Produit> getId(@PathVariable("id") final Integer produitId) {
 //		return produitService.getProduitById(produitId);
 	
