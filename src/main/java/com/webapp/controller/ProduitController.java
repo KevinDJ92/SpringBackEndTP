@@ -57,7 +57,7 @@ public class ProduitController {
 		return new ResponseEntity<Produit>(monProduitUpc, HttpStatus.OK);
 	}
 	
-	@GetMapping("/update/{id_produit}/{upc}/{nom_produit}/{image}/{categorie}/{code_unit}/{prix_vendant}/{prix_achat}/{quantite}/{description}")
+	@GetMapping("/update-produit/{id_produit}/{upc}/{nom_produit}/{image}/{categorie}/{code_unit}/{prix_vendant}/{prix_achat}/{quantite}/{description}")
     public ResponseEntity<Produit> update(@PathVariable("id_produit") final Integer idProduit, @PathVariable("upc") final String monUpc, @PathVariable("nom_produit") final String nomProduit,
                                           @PathVariable("image") final String monImage, @PathVariable("categorie") final String maCategorie, @PathVariable("code_unit") final Integer monCodeUnit,
                                           @PathVariable("prix_vendant") final Double monPrixVendant, @PathVariable("prix_achat") final Double monPrixAchat, @PathVariable("quantite") final Integer maQuantite,
@@ -82,7 +82,7 @@ public class ProduitController {
 
     }
 	
-	@GetMapping("/add/{id_produit}/{upc}/{nom_produit}/{image}/{categorie}/{code_unit}/{prix_vendant}/{prix_achat}/{quantite}/{description}")
+	@GetMapping("/add-produit/{id_produit}/{upc}/{nom_produit}/{image}/{categorie}/{code_unit}/{prix_vendant}/{prix_achat}/{quantite}/{description}")
     public ResponseEntity<Produit> add(@PathVariable("id_produit") final Integer idProduit, @PathVariable("upc") final String monUpc, @PathVariable("nom_produit") final String nomProduit,
                                           @PathVariable("image") final String monImage, @PathVariable("categorie") final String maCategorie, @PathVariable("code_unit") final Integer monCodeUnit,
                                           @PathVariable("prix_vendant") final Double monPrixVendant, @PathVariable("prix_achat") final Double monPrixAchat, @PathVariable("quantite") final Integer maQuantite,
@@ -107,7 +107,7 @@ public class ProduitController {
 
     }
 	
-	@GetMapping("/delete/id/{id_produit}")
+	@GetMapping("/delete-produit/id/{id_produit}")
 	public ResponseEntity delete(@PathVariable("id_produit") final Integer idProduit) {
 
 		Produit deleteProduit = new Produit();
@@ -119,7 +119,7 @@ public class ProduitController {
 
 	}
 	
-	@GetMapping("/delete/upc/{upc}")
+	@GetMapping("/delete-produit/upc/{upc}")
 	public ResponseEntity deleteByUpc(@PathVariable("upc") final String monUpc) {
 
 		Produit deleteProduitUpc = new Produit();

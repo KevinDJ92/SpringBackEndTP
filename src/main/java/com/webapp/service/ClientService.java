@@ -20,6 +20,11 @@ public class ClientService implements IClientService {
 	}
 	
 	@Override
+	public Client getClientById(Integer idClient) {
+		return clientRepository.findOne(idClient);
+	}
+	
+	@Override
 	public Client getClientByClient(String nomClient) {
 		return clientRepository.findByClient(nomClient);
 	}

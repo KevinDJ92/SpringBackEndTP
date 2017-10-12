@@ -3,9 +3,11 @@ package com.webapp.dao;
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import com.webapp.entity.Client;
 
+@Repository
 public interface ClientRepository extends CrudRepository<Client, Integer>{
 
 	List<Client> findAll();
