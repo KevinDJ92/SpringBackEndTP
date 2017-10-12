@@ -14,8 +14,7 @@ public interface ProduitRepository extends CrudRepository<Produit, Integer> {
     List<Produit> findAll();
     Produit findOne(Integer produitId);
     Produit findByUpc(String monUpc);
-    //<S> S save(Produit monProduit);
     <S extends Produit> S save(Produit monProduit);
     void delete(Produit produit);
-    void deleteByUpc(Produit produit);
+    
 }

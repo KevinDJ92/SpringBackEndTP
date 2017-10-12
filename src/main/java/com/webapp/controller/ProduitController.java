@@ -123,7 +123,7 @@ public class ProduitController {
 	public ResponseEntity deleteByUpc(@PathVariable("upc") final String monUpc) {
 
 		Produit deleteProduitUpc = new Produit();
-		deleteProduitUpc.setUpc(monUpc.toString());
+		deleteProduitUpc.setUpc(monUpc);
 		
 		produitService.doDeleteByUpc(deleteProduitUpc);
 
