@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -99,6 +100,17 @@ public class ProduitController {
 		
 	}
 	
+	@PutMapping("/update-produit")
+	public ResponseEntity update(@RequestBody Produit produit) {
+
+
+		
+		Produit reponseDuServiceProduit = produitService.doUpdate(produit);
+		
+		return new ResponseEntity<>(reponseDuServiceProduit, HttpStatus.OK);
+
+	}
+	
 	
 //	@GetMapping("/add-produit/{id_produit}/{upc}/{nom_produit}/{image}/{categorie}/{code_unit}/{prix_vendant}/{prix_achat}/{quantite}/{description}")
 //    public ResponseEntity<Produit> add(@PathVariable("id_produit") final Integer idProduit, @PathVariable("upc") final String monUpc, @PathVariable("nom_produit") final String nomProduit,
@@ -129,9 +141,9 @@ public class ProduitController {
 	public ResponseEntity delete(@RequestBody Produit produit) {
 
 
-		Produit reponseDuServiceProduit = produitService.doDelete(produit);
+		produitService.doDelete(produit);
 		
-		return new ResponseEntity<>(reponseDuServiceProduit, HttpStatus.OK);
+		return new ResponseEntity<>(HttpStatus.OK);
 	
 
 	}
