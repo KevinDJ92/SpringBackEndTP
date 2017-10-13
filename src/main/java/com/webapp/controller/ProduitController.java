@@ -7,14 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.webapp.dao.ProduitRepository;
+
 import com.webapp.entity.Produit;
 import com.webapp.service.IProduitService;
 
@@ -22,7 +22,7 @@ import com.webapp.service.IProduitService;
 
 @Controller
 @RequestMapping("/produits")
-@CrossOrigin(origins = {"http://localhost:4200"})
+
 
 public class ProduitController {
 	
@@ -84,7 +84,7 @@ public class ProduitController {
 
     }
 	
-	@PostMapping("/post-add") 
+	@PostMapping("/add-produit") 
 	public ResponseEntity<Produit> add(@RequestBody Produit produit) {
 				
 		
@@ -100,40 +100,39 @@ public class ProduitController {
 	}
 	
 	
-	@GetMapping("/add-produit/{id_produit}/{upc}/{nom_produit}/{image}/{categorie}/{code_unit}/{prix_vendant}/{prix_achat}/{quantite}/{description}")
-    public ResponseEntity<Produit> add(@PathVariable("id_produit") final Integer idProduit, @PathVariable("upc") final String monUpc, @PathVariable("nom_produit") final String nomProduit,
-                                          @PathVariable("image") final String monImage, @PathVariable("categorie") final String maCategorie, @PathVariable("code_unit") final Integer monCodeUnit,
-                                          @PathVariable("prix_vendant") final Double monPrixVendant, @PathVariable("prix_achat") final Double monPrixAchat, @PathVariable("quantite") final Integer maQuantite,
-                                          @PathVariable("description") final String maDescription) {
+//	@GetMapping("/add-produit/{id_produit}/{upc}/{nom_produit}/{image}/{categorie}/{code_unit}/{prix_vendant}/{prix_achat}/{quantite}/{description}")
+//    public ResponseEntity<Produit> add(@PathVariable("id_produit") final Integer idProduit, @PathVariable("upc") final String monUpc, @PathVariable("nom_produit") final String nomProduit,
+//                                          @PathVariable("image") final String monImage, @PathVariable("categorie") final String maCategorie, @PathVariable("code_unit") final Integer monCodeUnit,
+//                                          @PathVariable("prix_vendant") final Double monPrixVendant, @PathVariable("prix_achat") final Double monPrixAchat, @PathVariable("quantite") final Integer maQuantite,
+//                                          @PathVariable("description") final String maDescription) {
+//
+//
+//        Produit monProduitAdd = new Produit();
+//        monProduitAdd.setIdProduit(idProduit);
+//        monProduitAdd.setUpc(monUpc);
+//        monProduitAdd.setNomProduit(nomProduit);
+//        monProduitAdd.setImage(monImage);
+//        monProduitAdd.setCategorie(maCategorie);
+//        monProduitAdd.setCodeUnit(monCodeUnit);
+//        monProduitAdd.setPrixVendant(monPrixVendant);
+//        monProduitAdd.setPrix_achat(monPrixAchat);
+//        monProduitAdd.setQuantite(maQuantite);
+//        monProduitAdd.setDescription(maDescription);
+//
+//        Produit produit = produitService.doAdd(monProduitAdd);
+//
+//        return new ResponseEntity<>(produit, HttpStatus.OK);
+//
+//    }
+//	
+	@DeleteMapping("/delete-produit")
+	public ResponseEntity delete(@RequestBody Produit produit) {
 
 
-        Produit monProduitAdd = new Produit();
-        monProduitAdd.setIdProduit(idProduit);
-        monProduitAdd.setUpc(monUpc);
-        monProduitAdd.setNomProduit(nomProduit);
-        monProduitAdd.setImage(monImage);
-        monProduitAdd.setCategorie(maCategorie);
-        monProduitAdd.setCodeUnit(monCodeUnit);
-        monProduitAdd.setPrixVendant(monPrixVendant);
-        monProduitAdd.setPrix_achat(monPrixAchat);
-        monProduitAdd.setQuantite(maQuantite);
-        monProduitAdd.setDescription(maDescription);
-
-        Produit produit = produitService.doAdd(monProduitAdd);
-
-        return new ResponseEntity<>(produit, HttpStatus.OK);
-
-    }
-	
-	@GetMapping("/delete-produit/id/{id_produit}")
-	public ResponseEntity delete(@PathVariable("id_produit") final Integer idProduit) {
-
-		Produit deleteProduit = new Produit();
-		deleteProduit.setIdProduit(idProduit);
+		Produit reponseDuServiceProduit = produitService.doDelete(produit);
 		
-		produitService.doDelete(deleteProduit);
-
-		return new ResponseEntity<>(HttpStatus.OK);
+		return new ResponseEntity<>(reponseDuServiceProduit, HttpStatus.OK);
+	
 
 	}
 	
