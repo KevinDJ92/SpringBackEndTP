@@ -60,30 +60,30 @@ public class ProduitController {
 		return new ResponseEntity<Produit>(monProduitUpc, HttpStatus.OK);
 	}
 	
-	@GetMapping("/update-produit/{id_produit}/{upc}/{nom_produit}/{image}/{categorie}/{code_unit}/{prix_vendant}/{prix_achat}/{quantite}/{description}")
-    public ResponseEntity<Produit> update(@PathVariable("id_produit") final Integer idProduit, @PathVariable("upc") final String monUpc, @PathVariable("nom_produit") final String nomProduit,
-                                          @PathVariable("image") final String monImage, @PathVariable("categorie") final String maCategorie, @PathVariable("code_unit") final Integer monCodeUnit,
-                                          @PathVariable("prix_vendant") final Double monPrixVendant, @PathVariable("prix_achat") final Double monPrixAchat, @PathVariable("quantite") final Integer maQuantite,
-                                          @PathVariable("description") final String maDescription) {
-
-
-        Produit monProduitUpdate = new Produit();
-        monProduitUpdate.setIdProduit(idProduit);
-        monProduitUpdate.setUpc(monUpc);
-        monProduitUpdate.setNomProduit(nomProduit);
-        monProduitUpdate.setImage(monImage);
-        monProduitUpdate.setCategorie(maCategorie);
-        monProduitUpdate.setCodeUnit(monCodeUnit);
-        monProduitUpdate.setPrixVendant(monPrixVendant);
-        monProduitUpdate.setPrix_achat(monPrixAchat);
-        monProduitUpdate.setQuantite(maQuantite);
-        monProduitUpdate.setDescription(maDescription);
-
-        Produit produit = produitService.doUpdate(monProduitUpdate);
-
-        return new ResponseEntity<>(produit, HttpStatus.OK);
-
-    }
+//	@GetMapping("/update-produit/{id_produit}/{upc}/{nom_produit}/{image}/{categorie}/{code_unit}/{prix_vendant}/{prix_achat}/{quantite}/{description}")
+//    public ResponseEntity<Produit> update(@PathVariable("id_produit") final Integer idProduit, @PathVariable("upc") final String monUpc, @PathVariable("nom_produit") final String nomProduit,
+//                                          @PathVariable("image") final String monImage, @PathVariable("categorie") final String maCategorie, @PathVariable("code_unit") final Integer monCodeUnit,
+//                                          @PathVariable("prix_vendant") final Double monPrixVendant, @PathVariable("prix_achat") final Double monPrixAchat, @PathVariable("quantite") final Integer maQuantite,
+//                                          @PathVariable("description") final String maDescription) {
+//
+//
+//        Produit monProduitUpdate = new Produit();
+//        monProduitUpdate.setIdProduit(idProduit);
+//        monProduitUpdate.setUpc(monUpc);
+//        monProduitUpdate.setNomProduit(nomProduit);
+//        monProduitUpdate.setImage(monImage);
+//        monProduitUpdate.setCategorie(maCategorie);
+//        monProduitUpdate.setCodeUnit(monCodeUnit);
+//        monProduitUpdate.setPrixVendant(monPrixVendant);
+//        monProduitUpdate.setPrix_achat(monPrixAchat);
+//        monProduitUpdate.setQuantite(maQuantite);
+//        monProduitUpdate.setDescription(maDescription);
+//
+//        Produit produit = produitService.doUpdate(monProduitUpdate);
+//
+//        return new ResponseEntity<>(produit, HttpStatus.OK);
+//
+//    }
 	
 	@PostMapping("/add-produit") 
 	public ResponseEntity<Produit> add(@RequestBody Produit produit) {
@@ -148,53 +148,13 @@ public class ProduitController {
 
 	}
 	
-	@GetMapping("/delete-produit/upc/{upc}")
-	public ResponseEntity deleteByUpc(@PathVariable("upc") final String monUpc) {
+	@DeleteMapping("/delete-produit-upc")
+	public ResponseEntity deleteByUpc(@RequestBody Produit produit) {
 
-		Produit deleteProduitUpc = new Produit();
-		deleteProduitUpc.setUpc(monUpc);
+		produitService.doDeleteByUpc(produit);
 		
-		produitService.doDeleteByUpc(deleteProduitUpc);
-
 		return new ResponseEntity<>(HttpStatus.OK);
 
 	}
-	
-//	public List<Produit> getId(@PathVariable("id") final Integer produitId) {
-//		return produitService.getProduitById(produitId);
-	
-	
-//	@PostMapping("/create")
-//	public ResponseEntity<Void> createArticle(@RequestBody Produit produit, UriComponentsBuilder builder) {
-//		boolean flag = produitService.createProduit(produit);
-//		if(flag == false) {
-//			return new ResponseEntity<Void>(HttpStatus.CONFLICT);
-//		}
-//		HttpHeaders headers = new HttpHeaders();
-//		headers.setLocation(builder.path("/produit?codeProduit={codeProduit}").buildAndExpand(produit.getCodeProduit()).toUri());
-//		return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
-//	}
-////	
-////	@PostMapping("/produit")
-////	public ResponseEntity<Void> createArticleCourt(@RequestBody Produit produit, UriComponentsBuilder builder) {
-////		boolean flag = produitService.createProduitCourt(produit);
-////		if(flag == false) {
-////			return new ResponseEntity<Void>(HttpStatus.CONFLICT);
-////		}
-////		HttpHeaders headers = new HttpHeaders();
-////		headers.setLocation(builder.path("/produit?codeProduit={codeProduit}").buildAndExpand(produit.getCodeProduit()).toUri());
-////		return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
-////	}
-//	 
-//	@PutMapping("/update") 
-//	public ResponseEntity<Produit> updateProduit(@RequestBody Produit produit) {
-//		produitService.updateProduit(produit);
-//		return new ResponseEntity<Produit>(produit, HttpStatus.OK);
-//	}
-//	
-//	@DeleteMapping("/delete")
-//	public ResponseEntity<Void> deleteProduit(@RequestParam("codeProduit") String codeProduit) {
-//		produitService.deleteProduit(Integer.parseInt(codeProduit));
-//		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
-//	}
+
 	}
