@@ -9,14 +9,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.webapp.entity.Client;
+import com.webapp.entity.Produit;
 import com.webapp.service.IClientService;
 
 @Controller
 @RequestMapping("/clients")
-@CrossOrigin(origins = {"http://localhost:4200"})
+
 
 public class ClientController {
 
@@ -59,43 +63,55 @@ public class ClientController {
 		return new ResponseEntity<Client>(monClient, HttpStatus.OK);
 	}
 	
-	@GetMapping("/update-client/{id_client}/{client}/{telephone}/{contact}/{addresse}/{description}/{code_utilisateur}")
-	public ResponseEntity<Client> update(@PathVariable("id_client") final Integer idClient, @PathVariable("client") final String leClient,
-			@PathVariable("telephone") final String telephoneClient, @PathVariable("contact") final String leContact, @PathVariable("addresse") final String adresseClient,
-			@PathVariable("description") final String descriptionClient, @PathVariable("code_utilisateur") final Integer codeUtilisateur) {
-		
-		
-		Client modifierClient = new Client();
-		modifierClient.setIdClient(idClient);
-		modifierClient.setClient(leClient);
-		modifierClient.setTelephone(telephoneClient);
-		modifierClient.setContact(leContact);
-		modifierClient.setAdresse(adresseClient);
-		modifierClient.setDescription(descriptionClient);
-		modifierClient.setCodeUtilisateur(codeUtilisateur);
-		
-		Client client = clientService.doUpdate(modifierClient);
-		
-		return new ResponseEntity<>(client, HttpStatus.OK);
+	@PutMapping("/update-client")
+	public ResponseEntity update(@RequestBody Client client) {
+		Client reponseDuServiceClient = clientService.doUpdate(client);
+		return new ResponseEntity<>(reponseDuServiceClient, HttpStatus.OK);
 	}
 	
-	@GetMapping("/add-client/{id_client}/{client}/{telephone}/{contact}/{addresse}/{description}/{code_utilisateur}")
-	public ResponseEntity<Client> add(@PathVariable("id_client") final Integer idClient, @PathVariable("client") final String leClient,
-			@PathVariable("telephone") final String telephoneClient, @PathVariable("contact") final String leContact, @PathVariable("addresse") final String adresseClient,
-			@PathVariable("description") final String descriptionClient, @PathVariable("code_utilisateur") final Integer codeUtilisateur) {
-		
-		
-		Client nouveauClient = new Client();
-		nouveauClient.setIdClient(idClient);
-		nouveauClient.setClient(leClient);
-		nouveauClient.setTelephone(telephoneClient);
-		nouveauClient.setContact(leContact);
-		nouveauClient.setAdresse(adresseClient);
-		nouveauClient.setDescription(descriptionClient);
-		nouveauClient.setCodeUtilisateur(codeUtilisateur);
-		
-		Client client = clientService.doAdd(nouveauClient);
-		
-		return new ResponseEntity<>(client, HttpStatus.OK);
+//	@GetMapping("/update-client/{id_client}/{client}/{telephone}/{contact}/{addresse}/{description}/{code_utilisateur}")
+//	public ResponseEntity<Client> update(@PathVariable("id_client") final Integer idClient, @PathVariable("client") final String leClient,
+//			@PathVariable("telephone") final String telephoneClient, @PathVariable("contact") final String leContact, @PathVariable("addresse") final String adresseClient,
+//			@PathVariable("description") final String descriptionClient, @PathVariable("code_utilisateur") final Integer codeUtilisateur) {
+//		
+//		
+//		Client modifierClient = new Client();
+//		modifierClient.setIdClient(idClient);
+//		modifierClient.setClient(leClient);
+//		modifierClient.setTelephone(telephoneClient);
+//		modifierClient.setContact(leContact);
+//		modifierClient.setAdresse(adresseClient);
+//		modifierClient.setDescription(descriptionClient);
+//		modifierClient.setCodeUtilisateur(codeUtilisateur);
+//		
+//		Client client = clientService.doUpdate(modifierClient);
+//		
+//		return new ResponseEntity<>(client, HttpStatus.OK);
+//	}
+	
+	@PostMapping("/add-client")
+	public ResponseEntity add(@RequestBody Client client) {
+		Client reponseDuServiceClient = clientService.doAdd(client);
+		return new ResponseEntity<>(reponseDuServiceClient, HttpStatus.OK);
 	}
+//	
+//	@GetMapping("/add-client/{id_client}/{client}/{telephone}/{contact}/{addresse}/{description}/{code_utilisateur}")
+//	public ResponseEntity<Client> add(@PathVariable("id_client") final Integer idClient, @PathVariable("client") final String leClient,
+//			@PathVariable("telephone") final String telephoneClient, @PathVariable("contact") final String leContact, @PathVariable("addresse") final String adresseClient,
+//			@PathVariable("description") final String descriptionClient, @PathVariable("code_utilisateur") final Integer codeUtilisateur) {
+//		
+//		
+//		Client nouveauClient = new Client();
+//		nouveauClient.setIdClient(idClient);
+//		nouveauClient.setClient(leClient);
+//		nouveauClient.setTelephone(telephoneClient);
+//		nouveauClient.setContact(leContact);
+//		nouveauClient.setAdresse(adresseClient);
+//		nouveauClient.setDescription(descriptionClient);
+//		nouveauClient.setCodeUtilisateur(codeUtilisateur);
+//		
+//		Client client = clientService.doAdd(nouveauClient);
+//		
+//		return new ResponseEntity<>(client, HttpStatus.OK);
+//	}
 }
