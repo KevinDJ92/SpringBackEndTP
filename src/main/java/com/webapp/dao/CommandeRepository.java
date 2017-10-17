@@ -11,9 +11,7 @@ import com.webapp.entity.Commande;
 public interface CommandeRepository extends CrudRepository<Commande, Integer> {
 
 	List<Commande> findAll();
-	Commande findId(Integer commandeId);
-	List<Commande> findIdUtilisateur(Integer idUtilisateur);
-	List<Commande> findIdClient(Integer idClient);
+	Commande findOne(Integer monId);
 	<S extends Commande> S save(Commande maCommande);
     void delete(Commande commande);
 	

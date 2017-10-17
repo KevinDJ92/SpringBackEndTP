@@ -14,13 +14,13 @@ public class Item {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id_item")
-	private Integer idItem;
+	private Integer id_Item;
 	
 	@Column(name = "id_commande")
-	private Integer idCommande;
+	private Integer id_Commande;
 	
 	@Column(name = "code_produit")
-	private Integer codeProduit;
+	private Integer code_Produit;
 	
 	@Column(name = "upc")
 	private String upc;
@@ -37,28 +37,29 @@ public class Item {
 	@Column(name = "prix_ajuste")
 	private Double prixAjuste;
 
-	public Integer getIdItem() {
-		return idItem;
+	
+	public Integer getId_Item() {
+		return id_Item;
 	}
 
-	public void setIdItem(Integer idItem) {
-		this.idItem = idItem;
+	public void setId_Item(Integer id_Item) {
+		this.id_Item = id_Item;
 	}
 
-	public Integer getIdCommande() {
-		return idCommande;
+	public Integer getId_Commande() {
+		return id_Commande;
 	}
 
-	public void setIdCommande(Integer idCommande) {
-		this.idCommande = idCommande;
+	public void setId_Commande(Integer id_Commande) {
+		this.id_Commande = id_Commande;
 	}
 
-	public Integer getCodeProduit() {
-		return codeProduit;
+	public Integer getCode_Produit() {
+		return code_Produit;
 	}
 
-	public void setCodeProduit(Integer codeProduit) {
-		this.codeProduit = codeProduit;
+	public void setCode_Produit(Integer code_Produit) {
+		this.code_Produit = code_Produit;
 	}
 
 	public String getUpc() {

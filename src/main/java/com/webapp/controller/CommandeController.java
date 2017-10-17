@@ -42,17 +42,17 @@ public class CommandeController {
 	}
 	
 	@GetMapping("/idUtilisateur/{id_utilisateur}")
-	public ResponseEntity<List<Commande>> getCommandeByUtilisateur(@PathVariable("id_utilisateur") Integer idUtilisateur) {
-		List<Commande> listeVentesUtilisateur = commandeService.getCommandeByVendeur(idUtilisateur);
+	public ResponseEntity<Commande> getCommandeByUtilisateur(@PathVariable("id_utilisateur") Integer idUtilisateur) {
+		Commande listeVentesUtilisateur = commandeService.getCommandeByVendeur(idUtilisateur);
 		
-		return new ResponseEntity<List<Commande>>(listeVentesUtilisateur, HttpStatus.OK);
+		return new ResponseEntity<Commande>(listeVentesUtilisateur, HttpStatus.OK);
 	}
 	
 	@GetMapping("idClient/{id_client}")
-	public ResponseEntity<List<Commande>> getCommandeByClient(@PathVariable("id_client") Integer idClient) {
-		List<Commande> maCommandeClient = commandeService.getCommandeByClient(idClient);
+	public ResponseEntity<Commande> getCommandeByClient(@PathVariable("id_client") Integer idClient) {
+		Commande maCommandeClient = commandeService.getCommandeByClient(idClient);
 		
-		return new ResponseEntity<List<Commande>>(maCommandeClient,HttpStatus.OK);
+		return new ResponseEntity<Commande>(maCommandeClient,HttpStatus.OK);
 	}
 	
 	@PutMapping("/update-commande")

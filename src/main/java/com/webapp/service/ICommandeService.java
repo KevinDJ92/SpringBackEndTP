@@ -8,8 +8,8 @@ public interface ICommandeService {
 
 	List<Commande> getAllCommande();
 	Commande getCommandeById(Integer commandeId);
-	List<Commande> getCommandeByVendeur(Integer idUtilisateur);
-	List<Commande> getCommandeByClient(Integer idClient);
+	Commande getCommandeByVendeur(Integer idUtilisateur);
+	Commande getCommandeByClient(Integer idClient);
 	Commande doAdd(Commande monCommande);
 	Commande doUpdate(Commande monCommande);
 	void doDelete(Commande commandeId);

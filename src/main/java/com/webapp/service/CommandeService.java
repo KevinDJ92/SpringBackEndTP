@@ -30,13 +30,13 @@ public class CommandeService implements ICommandeService {
 	}
 
 	@Override
-	public List<Commande> getCommandeByVendeur(Integer idUtilisateur) {
-		return commandeRepository.findIdUtilisateur(idUtilisateur);
+	public Commande getCommandeByVendeur(Integer idVendeur) {
+		return commandeRepository.findOne(idVendeur);
 	}
 
 	@Override
-	public List<Commande> getCommandeByClient(Integer idClient) {
-		return commandeRepository.findIdClient(idClient);
+	public Commande getCommandeByClient(Integer idClient) {
+		return commandeRepository.findOne(idClient);
 	}
 
 	@Override
