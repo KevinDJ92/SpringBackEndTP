@@ -38,11 +38,11 @@ public class ProduitService implements IProduitService {
 
 
         updateProduit.setUpc(monProduit.getUpc());
-        updateProduit.setNomProduit(monProduit.getNomProduit());
+        updateProduit.setNom_produit(monProduit.getNom_produit());
         updateProduit.setImage(monProduit.getImage());
         updateProduit.setCategorie(monProduit.getCategorie());
-        updateProduit.setCodeUnit(monProduit.getCodeUnit());
-        updateProduit.setPrixVendant(monProduit.getPrixVendant());
+        updateProduit.setCode_unit(monProduit.getCode_unit());
+        updateProduit.setPrix_vendant(monProduit.getPrix_vendant());
         updateProduit.setPrix_achat(monProduit.getPrix_achat());
         updateProduit.setQuantite(monProduit.getQuantite());
         updateProduit.setDescription(monProduit.getDescription());
@@ -58,11 +58,11 @@ public class ProduitService implements IProduitService {
 
 
         addProduit.setUpc(monProduit.getUpc());
-        addProduit.setNomProduit(monProduit.getNomProduit());
+        addProduit.setNom_produit(monProduit.getNom_produit());
         addProduit.setImage(monProduit.getImage());
         addProduit.setCategorie(monProduit.getCategorie());
-        addProduit.setCodeUnit(monProduit.getCodeUnit());
-        addProduit.setPrixVendant(monProduit.getPrixVendant());
+        addProduit.setCode_unit(monProduit.getCode_unit());
+        addProduit.setPrix_vendant(monProduit.getPrix_vendant());
         addProduit.setPrix_achat(monProduit.getPrix_achat());
         addProduit.setQuantite(monProduit.getQuantite());
         addProduit.setDescription(monProduit.getDescription());

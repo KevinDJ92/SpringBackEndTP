@@ -14,7 +14,7 @@ public class Client {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id_client")
-	private Integer idClient;
+	private Integer id_client;
 	
 	@Column(name = "client")
 	private String client;
@@ -25,21 +25,21 @@ public class Client {
 	@Column(name = "contact")
 	private String contact;
 	
-	@Column(name = "addresse")
+	@Column(name = "adresse")
 	private String adresse;
 	
 	@Column(name = "description")
 	private String description;
 	
 	@Column(name = "code_utilisateur")
-	private Integer codeUtilisateur;
+	private Integer code_utilisateur;
 
-	public Integer getIdClient() {
-		return idClient;
+	public Integer getId_client() {
+		return id_client;
 	}
 
-	public void setIdClient(Integer idClient) {
-		this.idClient = idClient;
+	public void setId_client(Integer id_client) {
+		this.id_client = id_client;
 	}
 
 	public String getClient() {
@@ -53,7 +53,6 @@ public class Client {
 	public String getContact() {
 		return contact;
 	}
-	
 	
 	public String getTelephone() {
 		return telephone;
@@ -83,14 +82,13 @@ public class Client {
 		this.description = description;
 	}
 
-	public Integer getCodeUtilisateur() {
-		return codeUtilisateur;
+	public Integer getCode_utilisateur() {
+		return code_utilisateur;
 	}
 
-	public void setCodeUtilisateur(Integer codeUtilisateur) {
-		this.codeUtilisateur = codeUtilisateur;
+	public void setCode_utilisateur(Integer code_utilisateur) {
+		this.code_utilisateur = code_utilisateur;
 	}
-	
 	
 	
 }

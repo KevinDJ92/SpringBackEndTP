@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @Table(name = "Produit")
 public class Produit {
 
-    @Id
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_produit")
     private Integer idProduit;
@@ -21,7 +21,7 @@ public class Produit {
     private String upc;
 
     @Column(name = "nom_produit")
-    private String nomProduit;
+    private String nom_produit;
 
     @Column(name = "image")
     private String image;
@@ -30,10 +30,10 @@ public class Produit {
     private String categorie;
 
     @Column(name = "code_unit")
-    private Integer codeUnit;
+    private Integer code_unit;
 
     @Column(name = "prix_vendant")
-    private Double prixVendant;
+    private Double prix_vendant;
 
     @Column(name = "prix_achat")
     private Double prix_achat;
@@ -43,8 +43,6 @@ public class Produit {
 	
 	@Column(name = "description")
 	private String description;
-
-
 
 	public Integer getIdProduit() {
 		return idProduit;
@@ -62,12 +60,12 @@ public class Produit {
 		this.upc = upc;
 	}
 
-	public String getNomProduit() {
-		return nomProduit;
+	public String getNom_produit() {
+		return nom_produit;
 	}
 
-	public void setNomProduit(String nomProduit) {
-		this.nomProduit = nomProduit;
+	public void setNom_produit(String nom_produit) {
+		this.nom_produit = nom_produit;
 	}
 
 	public String getImage() {
@@ -86,22 +84,20 @@ public class Produit {
 		this.categorie = categorie;
 	}
 
-
-
-	public Integer getCodeUnit() {
-		return codeUnit;
+	public Integer getCode_unit() {
+		return code_unit;
 	}
 
-	public void setCodeUnit(Integer codeUnit) {
-		this.codeUnit = codeUnit;
+	public void setCode_unit(Integer code_unit) {
+		this.code_unit = code_unit;
 	}
 
-	public Double getPrixVendant() {
-		return prixVendant;
+	public Double getPrix_vendant() {
+		return prix_vendant;
 	}
 
-	public void setPrixVendant(Double prixVendant) {
-		this.prixVendant = prixVendant;
+	public void setPrix_vendant(Double prix_vendant) {
+		this.prix_vendant = prix_vendant;
 	}
 
 	public Double getPrix_achat() {
@@ -127,7 +123,4 @@ public class Produit {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	
-	
 }

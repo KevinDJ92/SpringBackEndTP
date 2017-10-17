@@ -15,12 +15,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.webapp.entity.Client;
-import com.webapp.entity.Produit;
 import com.webapp.service.IClientService;
 
 @Controller
 @RequestMapping("/clients")
-
+//@CrossOrigin(origins = {"http://localhost:4200"})
 
 public class ClientController {
 
@@ -56,8 +55,8 @@ public class ClientController {
 		return new ResponseEntity<Client>(monClient, HttpStatus.OK);
 	}
 	
-	@GetMapping("/adresse/{addresse}")
-	public ResponseEntity<Client> getClientByAdresse(@PathVariable("addresse") final String adresseClient) {
+	@GetMapping("/adresse/{adresse}")
+	public ResponseEntity<Client> getClientByAdresse(@PathVariable("adresse") final String adresseClient) {
 		Client monClient = clientService.getClientByAdresse(adresseClient);
 		
 		return new ResponseEntity<Client>(monClient, HttpStatus.OK);
