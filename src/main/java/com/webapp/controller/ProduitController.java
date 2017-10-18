@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
 
 import com.webapp.entity.Produit;
 import com.webapp.service.IProduitService;
@@ -103,11 +103,11 @@ public class ProduitController {
 	}
 	
 	@DeleteMapping("/delete-produit-upc")
-	public ResponseEntity deleteByUpc(@RequestParam String upc) {
+	public ResponseEntity deleteByUpc(@RequestBody Produit produit) {
 
-		produitService.doDeleteByUpc(upc);
+		produitService.doDeleteByUpc(produit);
 		
-		return new ResponseEntity<>(HttpStatus.ACCEPTED);
+		return new ResponseEntity<>(HttpStatus.OK);
 
 	}
 

@@ -80,10 +80,10 @@ public class ProduitService implements IProduitService {
     }
     
     @Override
-    public void doDeleteByUpc(String upc) {
+    public void doDeleteByUpc(Produit monProduit) {
 
 
-    	Produit deleteProduitByUpc = produitRepository.findByUpc(upc);
+    	Produit deleteProduitByUpc = produitRepository.findByUpc(monProduit.getUpc());
 
          produitRepository.delete(deleteProduitByUpc);
     }
