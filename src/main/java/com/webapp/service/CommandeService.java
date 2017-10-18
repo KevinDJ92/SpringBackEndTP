@@ -44,16 +44,16 @@ public class CommandeService implements ICommandeService {
 		Commande addCommande = new Commande();
 
 System.out.println("Dans le service de commande dans add");
-		addCommande.setId_commande(maCommande.getId_commande());
-		addCommande.setId_client(maCommande.getId_client());
-		addCommande.setId_utilisateur(maCommande.getId_utilisateur());
-	    addCommande.setVente_ideal(maCommande.getVente_ideal());
-	    addCommande.setVente_total(maCommande.getVente_total());
-	    addCommande.setCommission_type(maCommande.getCommission_type());
-	    addCommande.setCommision_montant(maCommande.getCommision_montant());
+		addCommande.setIdCommande(maCommande.getIdCommande());
+		addCommande.setIdClient(maCommande.getIdClient());
+		addCommande.setIdUtilisateur(maCommande.getIdUtilisateur());
+	    addCommande.setVenteIdeal(maCommande.getVenteIdeal());
+	    addCommande.setVenteTotal(maCommande.getVenteTotal());
+	    addCommande.setCommissionType(maCommande.getCommissionType());
+	    addCommande.setCommisionMontant(maCommande.getCommisionMontant());
 	    addCommande.setAdresse(maCommande.getAdresse());
-	    addCommande.setDate_vente(maCommande.getDate_vente());
-	    addCommande.setDate_commission(maCommande.getDate_commission());
+	    addCommande.setDateVente(maCommande.getDateVente());
+	    addCommande.setDateCommission(maCommande.getDateCommission());
 
 	   return commandeRepository.save(addCommande);
 	}
@@ -63,23 +63,23 @@ System.out.println("Dans le service de commande dans add");
 		Commande updateCommande = new Commande();
 
 
-		updateCommande.setId_commande(maCommande.getId_commande());
-		updateCommande.setId_client(maCommande.getId_client());
-		updateCommande.setId_utilisateur(maCommande.getId_utilisateur());
-		updateCommande.setVente_ideal(maCommande.getVente_ideal());
-		updateCommande.setVente_total(maCommande.getVente_total());
-		updateCommande.setCommission_type(maCommande.getCommission_type());
-		updateCommande.setCommision_montant(maCommande.getCommision_montant());
+		updateCommande.setIdCommande(maCommande.getIdCommande());
+		updateCommande.setIdClient(maCommande.getIdClient());
+		updateCommande.setIdUtilisateur(maCommande.getIdUtilisateur());
+		updateCommande.setVenteIdeal(maCommande.getVenteIdeal());
+		updateCommande.setVenteTotal(maCommande.getVenteTotal());
+		updateCommande.setCommissionType(maCommande.getCommissionType());
+		updateCommande.setCommisionMontant(maCommande.getCommisionMontant());
 		updateCommande.setAdresse(maCommande.getAdresse());
-		updateCommande.setDate_vente(maCommande.getDate_vente());
-		updateCommande.setDate_commission(maCommande.getDate_commission());
+		updateCommande.setDateVente(maCommande.getDateVente());
+		updateCommande.setDateCommission(maCommande.getDateCommission());
 
 	   return commandeRepository.save(updateCommande);
 	}
 
 	@Override
 	public void doDelete(Commande commande) {
-		Commande deleteCommande = commandeRepository.findOne(commande.getId_commande());
+		Commande deleteCommande = commandeRepository.findOne(commande.getIdCommande());
 
         commandeRepository.delete(deleteCommande);
 		

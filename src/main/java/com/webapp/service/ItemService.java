@@ -35,14 +35,14 @@ public class ItemService implements IItemService {
 		
 		Item addItem = new Item();
 		
-		addItem.setId_item(item.getId_item());
-		addItem.setId_commande(item.getId_commande());
-		addItem.setCode_produit(item.getCode_produit());
+		addItem.setIdItem(item.getIdItem());
+		addItem.setIdCommande(item.getIdCommande());
+		addItem.setCodeProduit(item.getCodeProduit());
 		addItem.setUpc(item.getUpc());
 		addItem.setQuantite(item.getQuantite());
-		addItem.setPrix_achat(item.getPrix_achat());
-		addItem.setPrix_vendant(item.getPrix_vendant());
-		addItem.setPrix_ajuste(item.getPrix_ajuste());
+		addItem.setPrixAchat(item.getPrixAchat());
+		addItem.setPrixVendant(item.getPrixVendant());
+		addItem.setPrixAjuste(item.getPrixAjuste());
 		
 		return itemRepository.save(addItem);
 		
@@ -51,17 +51,17 @@ public class ItemService implements IItemService {
 	@Override
 	public Item doUpdate(Item item) {
 		
-		Item updateItem = itemRepository.findOne(item.getId_item());
+		Item updateItem = itemRepository.findOne(item.getIdItem());
 
 
-		updateItem.setId_item(item.getId_item());
-		updateItem.setId_commande(item.getId_commande());
-		updateItem.setCode_produit(item.getCode_produit());
+		updateItem.setIdItem(item.getIdItem());
+		updateItem.setIdCommande(item.getIdCommande());
+		updateItem.setCodeProduit(item.getCodeProduit());
 		updateItem.setUpc(item.getUpc());
 		updateItem.setQuantite(item.getQuantite());
-		updateItem.setPrix_achat(item.getPrix_achat());
-		updateItem.setPrix_vendant(item.getPrix_vendant());
-		updateItem.setPrix_ajuste(item.getPrix_ajuste());
+		updateItem.setPrixAchat(item.getPrixAchat());
+		updateItem.setPrixVendant(item.getPrixVendant());
+		updateItem.setPrixAjuste(item.getPrixAjuste());
 		
 
         return itemRepository.save(updateItem);
@@ -69,7 +69,7 @@ public class ItemService implements IItemService {
 	
 	@Override
 	public void doDelete(Item item) {
-		Item deleteItem = itemRepository.findOne(item.getId_item());
+		Item deleteItem = itemRepository.findOne(item.getIdItem());
 		
 		itemRepository.delete(deleteItem);
 	}

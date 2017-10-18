@@ -17,89 +17,89 @@ public class Commande {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_commande")
-    private Integer id_commande;
+    private Integer idCommande;
 	
 	@Column(name = "id_client")
-    private Integer id_client;
+    private Integer idClient;
 	
 	@Column(name = "id_utilisateur")
-	private Integer id_utilisateur;
+	private Integer idUtilisateur;
 
 	@Column(name = "vente_ideal")
-	private Double vente_ideal;
+	private Double venteIdeal;
 
 	@Column(name = "vente_total")
-	private Double vente_total;
+	private Double venteTotal;
 
 	@Column(name = "commission_type")
-	private String commission_type;
+	private String commissionType;
 
 	@Column(name = "commision_montant")
-	private Double commision_montant;
+	private Double commisionMontant;
 
 	@Column(name = "adresse")
 	private String adresse;
 	
 	@Column(name = "date_vente")
-	private Date date_vente;
+	private Date dateVente;
 		
 	@Column(name = "date_commission")
-	private Date date_commission;
+	private Date dateCommission;
 
-	public Integer getId_commande() {
-		return id_commande;
+	public Integer getIdCommande() {
+		return idCommande;
 	}
 
-	public void setId_commande(Integer id_commande) {
-		this.id_commande = id_commande;
+	public void setIdCommande(Integer idCommande) {
+		this.idCommande = idCommande;
 	}
 
-	public Integer getId_client() {
-		return id_client;
+	public Integer getIdClient() {
+		return idClient;
 	}
 
-	public void setId_client(Integer id_client) {
-		this.id_client = id_client;
+	public void setIdClient(Integer idClient) {
+		this.idClient = idClient;
 	}
 
-	public Integer getId_utilisateur() {
-		return id_utilisateur;
+	public Integer getIdUtilisateur() {
+		return idUtilisateur;
 	}
 
-	public void setId_utilisateur(Integer id_utilisateur) {
-		this.id_utilisateur = id_utilisateur;
+	public void setIdUtilisateur(Integer idUtilisateur) {
+		this.idUtilisateur = idUtilisateur;
 	}
 
-	public Double getVente_ideal() {
-		return vente_ideal;
+	public Double getVenteIdeal() {
+		return venteIdeal;
 	}
 
-	public void setVente_ideal(Double vente_ideal) {
-		this.vente_ideal = vente_ideal;
+	public void setVenteIdeal(Double venteIdeal) {
+		this.venteIdeal = venteIdeal;
 	}
 
-	public Double getVente_total() {
-		return vente_total;
+	public Double getVenteTotal() {
+		return venteTotal;
 	}
 
-	public void setVente_total(Double vente_total) {
-		this.vente_total = vente_total;
+	public void setVenteTotal(Double venteTotal) {
+		this.venteTotal = venteTotal;
 	}
 
-	public String getCommission_type() {
-		return commission_type;
+	public String getCommissionType() {
+		return commissionType;
 	}
 
-	public void setCommission_type(String commission_type) {
-		this.commission_type = commission_type;
+	public void setCommissionType(String commissionType) {
+		this.commissionType = commissionType;
 	}
 
-	public Double getCommision_montant() {
-		return commision_montant;
+	public Double getCommisionMontant() {
+		return commisionMontant;
 	}
 
-	public void setCommision_montant(Double commision_montant) {
-		this.commision_montant = commision_montant;
+	public void setCommisionMontant(Double commisionMontant) {
+		this.commisionMontant = commisionMontant;
 	}
 
 	public String getAdresse() {
@@ -110,23 +110,19 @@ public class Commande {
 		this.adresse = adresse;
 	}
 
-	public Date getDate_vente() {
-		return date_vente;
+	public Date getDateVente() {
+		return dateVente;
 	}
 
-	public void setDate_vente(Date date_vente) {
-		this.date_vente = date_vente;
+	public void setDateVente(Date dateVente) {
+		this.dateVente = dateVente;
 	}
 
-	public Date getDate_commission() {
-		return date_commission;
+	public Date getDateCommission() {
+		return dateCommission;
 	}
 
-	public void setDate_commission(Date date_commission) {
-		this.date_commission = date_commission;
+	public void setDateCommission(Date dateCommission) {
+		this.dateCommission = dateCommission;
 	}
-
-	
-	
-	
 }

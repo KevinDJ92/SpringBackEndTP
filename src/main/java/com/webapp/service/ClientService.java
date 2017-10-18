@@ -42,14 +42,14 @@ public class ClientService implements IClientService {
 	@Override
 	public Client doUpdate(Client client) {
 		
-		Client clientUpdate = clientRepository.findOne(client.getId_client());
+		Client clientUpdate = clientRepository.findOne(client.getIdClient());
 		
 		clientUpdate.setClient(client.getClient());
 		clientUpdate.setTelephone(client.getTelephone());
 		clientUpdate.setContact(client.getContact());
 		clientUpdate.setAdresse(client.getAdresse());
 		clientUpdate.setDescription(client.getDescription());
-		clientUpdate.setCode_utilisateur(client.getCode_utilisateur());
+		clientUpdate.setCodeUtilisateur(client.getCodeUtilisateur());
 		
 		
 		return clientRepository.save(clientUpdate);
@@ -67,7 +67,7 @@ public class ClientService implements IClientService {
 		nouveauClient.setContact(client.getContact());
 		nouveauClient.setAdresse(client.getAdresse());
 		nouveauClient.setDescription(client.getDescription());
-		nouveauClient.setCode_utilisateur(client.getCode_utilisateur());
+		nouveauClient.setCodeUtilisateur(client.getCodeUtilisateur());
 		
 		return clientRepository.save(nouveauClient);
 	}

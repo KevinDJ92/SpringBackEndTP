@@ -38,12 +38,12 @@ public class ProduitService implements IProduitService {
 
 
         updateProduit.setUpc(monProduit.getUpc());
-        updateProduit.setNom_produit(monProduit.getNom_produit());
+        updateProduit.setNomProduit(monProduit.getNomProduit());
         updateProduit.setImage(monProduit.getImage());
         updateProduit.setCategorie(monProduit.getCategorie());
-        updateProduit.setCode_unit(monProduit.getCode_unit());
-        updateProduit.setPrix_vendant(monProduit.getPrix_vendant());
-        updateProduit.setPrix_achat(monProduit.getPrix_achat());
+        updateProduit.setCodeUnit(monProduit.getCodeUnit());
+        updateProduit.setPrixVendant(monProduit.getPrixVendant());
+        updateProduit.setPrixAchat(monProduit.getPrixAchat());
         updateProduit.setQuantite(monProduit.getQuantite());
         updateProduit.setDescription(monProduit.getDescription());
 
@@ -58,12 +58,12 @@ public class ProduitService implements IProduitService {
 
 
         addProduit.setUpc(monProduit.getUpc());
-        addProduit.setNom_produit(monProduit.getNom_produit());
+        addProduit.setNomProduit(monProduit.getNomProduit());
         addProduit.setImage(monProduit.getImage());
         addProduit.setCategorie(monProduit.getCategorie());
-        addProduit.setCode_unit(monProduit.getCode_unit());
-        addProduit.setPrix_vendant(monProduit.getPrix_vendant());
-        addProduit.setPrix_achat(monProduit.getPrix_achat());
+        addProduit.setCodeUnit(monProduit.getCodeUnit());
+        addProduit.setPrixVendant(monProduit.getPrixVendant());
+        addProduit.setPrixAchat(monProduit.getPrixAchat());
         addProduit.setQuantite(monProduit.getQuantite());
         addProduit.setDescription(monProduit.getDescription());
 
@@ -80,10 +80,10 @@ public class ProduitService implements IProduitService {
     }
     
     @Override
-    public void doDeleteByUpc(Produit monProduit) {
+    public void doDeleteByUpc(String upc) {
 
 
-    	Produit deleteProduitByUpc = produitRepository.findByUpc(monProduit.getUpc());
+    	Produit deleteProduitByUpc = produitRepository.findByUpc(upc);
 
          produitRepository.delete(deleteProduitByUpc);
     }

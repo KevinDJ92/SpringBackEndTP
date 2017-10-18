@@ -7,7 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "Produit")
 public class Produit {
@@ -21,8 +20,8 @@ public class Produit {
     private String upc;
 
     @Column(name = "nom_produit")
-    private String nom_produit;
-
+    private String nomProduit;
+    
     @Column(name = "image")
     private String image;
 
@@ -30,13 +29,13 @@ public class Produit {
     private String categorie;
 
     @Column(name = "code_unit")
-    private Integer code_unit;
+    private Integer codeUnit;
 
     @Column(name = "prix_vendant")
-    private Double prix_vendant;
+    private Double prixVendant;
 
     @Column(name = "prix_achat")
-    private Double prix_achat;
+    private Double prixAchat;
 	
 	@Column(name = "quantite")
 	private Integer quantite;
@@ -60,12 +59,12 @@ public class Produit {
 		this.upc = upc;
 	}
 
-	public String getNom_produit() {
-		return nom_produit;
+	public String getNomProduit() {
+		return nomProduit;
 	}
 
-	public void setNom_produit(String nom_produit) {
-		this.nom_produit = nom_produit;
+	public void setNomProduit(String nomProduit) {
+		this.nomProduit = nomProduit;
 	}
 
 	public String getImage() {
@@ -84,28 +83,28 @@ public class Produit {
 		this.categorie = categorie;
 	}
 
-	public Integer getCode_unit() {
-		return code_unit;
+	public Integer getCodeUnit() {
+		return codeUnit;
 	}
 
-	public void setCode_unit(Integer code_unit) {
-		this.code_unit = code_unit;
+	public void setCodeUnit(Integer codeUnit) {
+		this.codeUnit = codeUnit;
 	}
 
-	public Double getPrix_vendant() {
-		return prix_vendant;
+	public Double getPrixVendant() {
+		return prixVendant;
 	}
 
-	public void setPrix_vendant(Double prix_vendant) {
-		this.prix_vendant = prix_vendant;
+	public void setPrixVendant(Double prixVendant) {
+		this.prixVendant = prixVendant;
 	}
 
-	public Double getPrix_achat() {
-		return prix_achat;
+	public Double getPrixAchat() {
+		return prixAchat;
 	}
 
-	public void setPrix_achat(Double prix_achat) {
-		this.prix_achat = prix_achat;
+	public void setPrixAchat(Double prixAchat) {
+		this.prixAchat = prixAchat;
 	}
 
 	public Integer getQuantite() {
