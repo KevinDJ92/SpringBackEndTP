@@ -43,7 +43,7 @@ public class CommandeService implements ICommandeService {
 	public Commande doAdd(Commande maCommande) {
 		Commande addCommande = new Commande();
 
-
+System.out.println("Dans le service de commande dans add");
 		addCommande.setId_commande(maCommande.getId_commande());
 		addCommande.setId_client(maCommande.getId_client());
 		addCommande.setId_utilisateur(maCommande.getId_utilisateur());

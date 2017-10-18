@@ -20,7 +20,7 @@ import com.webapp.service.ICommandeService;
 
 @Controller
 @RequestMapping("/commandes")
-@CrossOrigin(origins = {"http://localhost:8080"})
+//@CrossOrigin(origins = {"localhost:8080", "http://localhost:8080"})
 public class CommandeController {
 
 	@Autowired
@@ -64,6 +64,7 @@ public class CommandeController {
 
 	@PostMapping("/add-commande")
 	public ResponseEntity<Commande> add(@RequestBody Commande commande) {
+		System.out.println("Dans le post mapping (controlleur)");
 		Commande reponseServiceCommande = commandeService.doAdd(commande);
 		
 		return new ResponseEntity<>(reponseServiceCommande,HttpStatus.OK);

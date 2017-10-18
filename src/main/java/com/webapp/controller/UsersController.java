@@ -22,7 +22,7 @@ import com.webapp.service.IUsersService;
 
 @Controller
 @RequestMapping("users")
-@CrossOrigin(origins = {"http://localhost:4200"})
+//@CrossOrigin(origins = {"localhost:8080", "http://localhost:8080"})
 public class UsersController {
 	
 	@Autowired

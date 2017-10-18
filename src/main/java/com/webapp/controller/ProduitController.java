@@ -24,7 +24,7 @@ import com.webapp.service.IProduitService;
 
 @Controller
 @RequestMapping("/produits")
-@CrossOrigin(origins = {"http://localhost:8080"})
+//@CrossOrigin(origins = {"localhost:8080", "http://localhost:8080"})
 
 public class ProduitController {
 	
