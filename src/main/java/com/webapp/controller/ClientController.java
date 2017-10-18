@@ -19,7 +19,7 @@ import com.webapp.service.IClientService;
 
 @Controller
 @RequestMapping("/clients")
-//@CrossOrigin(origins = {"localhost:8080", "http://localhost:8080"})
+@CrossOrigin(origins = {"*"})
 
 public class ClientController {
 

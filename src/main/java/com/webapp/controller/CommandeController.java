@@ -20,7 +20,7 @@ import com.webapp.service.ICommandeService;
 
 @Controller
 @RequestMapping("/commandes")
-//@CrossOrigin(origins = {"localhost:8080", "http://localhost:8080"})
+@CrossOrigin(origins = {"*"})
 public class CommandeController {
 
 	@Autowired

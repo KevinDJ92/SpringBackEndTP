@@ -24,7 +24,7 @@ import com.webapp.service.IProduitService;
 
 @Controller
 @RequestMapping("/produits")
-//@CrossOrigin(origins = {"localhost:8080", "http://localhost:8080"})
+@CrossOrigin(origins = {"*"})
 
 public class ProduitController {
 	
@@ -61,30 +61,7 @@ public class ProduitController {
 		return new ResponseEntity<Produit>(monProduitUpc, HttpStatus.OK);
 	}
 	
-//	@GetMapping("/update-produit/{id_produit}/{upc}/{nom_produit}/{image}/{categorie}/{code_unit}/{prix_vendant}/{prix_achat}/{quantite}/{description}")
-//    public ResponseEntity<Produit> update(@PathVariable("id_produit") final Integer idProduit, @PathVariable("upc") final String monUpc, @PathVariable("nom_produit") final String nomProduit,
-//                                          @PathVariable("image") final String monImage, @PathVariable("categorie") final String maCategorie, @PathVariable("code_unit") final Integer monCodeUnit,
-//                                          @PathVariable("prix_vendant") final Double monPrixVendant, @PathVariable("prix_achat") final Double monPrixAchat, @PathVariable("quantite") final Integer maQuantite,
-//                                          @PathVariable("description") final String maDescription) {
-//
-//
-//        Produit monProduitUpdate = new Produit();
-//        monProduitUpdate.setIdProduit(idProduit);
-//        monProduitUpdate.setUpc(monUpc);
-//        monProduitUpdate.setNomProduit(nomProduit);
-//        monProduitUpdate.setImage(monImage);
-//        monProduitUpdate.setCategorie(maCategorie);
-//        monProduitUpdate.setCodeUnit(monCodeUnit);
-//        monProduitUpdate.setPrixVendant(monPrixVendant);
-//        monProduitUpdate.setPrix_achat(monPrixAchat);
-//        monProduitUpdate.setQuantite(maQuantite);
-//        monProduitUpdate.setDescription(maDescription);
-//
-//        Produit produit = produitService.doUpdate(monProduitUpdate);
-//
-//        return new ResponseEntity<>(produit, HttpStatus.OK);
-//
-//    }
+
 	
 	@PostMapping("/add-produit") 
 	public ResponseEntity<Produit> add(@RequestBody Produit produit) {
@@ -113,31 +90,7 @@ public class ProduitController {
 	}
 	
 	
-//	@GetMapping("/add-produit/{id_produit}/{upc}/{nom_produit}/{image}/{categorie}/{code_unit}/{prix_vendant}/{prix_achat}/{quantite}/{description}")
-//    public ResponseEntity<Produit> add(@PathVariable("id_produit") final Integer idProduit, @PathVariable("upc") final String monUpc, @PathVariable("nom_produit") final String nomProduit,
-//                                          @PathVariable("image") final String monImage, @PathVariable("categorie") final String maCategorie, @PathVariable("code_unit") final Integer monCodeUnit,
-//                                          @PathVariable("prix_vendant") final Double monPrixVendant, @PathVariable("prix_achat") final Double monPrixAchat, @PathVariable("quantite") final Integer maQuantite,
-//                                          @PathVariable("description") final String maDescription) {
-//
-//
-//        Produit monProduitAdd = new Produit();
-//        monProduitAdd.setIdProduit(idProduit);
-//        monProduitAdd.setUpc(monUpc);
-//        monProduitAdd.setNomProduit(nomProduit);
-//        monProduitAdd.setImage(monImage);
-//        monProduitAdd.setCategorie(maCategorie);
-//        monProduitAdd.setCodeUnit(monCodeUnit);
-//        monProduitAdd.setPrixVendant(monPrixVendant);
-//        monProduitAdd.setPrix_achat(monPrixAchat);
-//        monProduitAdd.setQuantite(maQuantite);
-//        monProduitAdd.setDescription(maDescription);
-//
-//        Produit produit = produitService.doAdd(monProduitAdd);
-//
-//        return new ResponseEntity<>(produit, HttpStatus.OK);
-//
-//    }
-//	
+	
 	@DeleteMapping("/delete-produit")
 	public ResponseEntity delete(@RequestBody Produit produit) {
 

@@ -8,10 +8,9 @@ public interface IItemService {
 
 	List<Item> getAllItem();
 	Item getItemById(Integer idItem);
-	Item getCommandeById(Integer idCommande);
-	Item getClientByAdresse(String monAdresse);
-	Item getClientByNumeroTelephone(String monNumeroTelephone);
+	Item getItemByCommandeId(Integer idCommande);
 	Item doUpdate(Item item);
 	Item doAdd(Item item);
-	Item doRemove(Item item);
+	void doDelete(Item item);
+	void doDeleteByUpc(Item item);
 }

@@ -14,13 +14,13 @@ public class Item {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id_item")
-	private Integer id_Item;
+	private Integer id_item;
 	
 	@Column(name = "id_commande")
-	private Integer id_Commande;
+	private Integer id_commande;
 	
 	@Column(name = "code_produit")
-	private Integer code_Produit;
+	private Integer code_produit;
 	
 	@Column(name = "upc")
 	private String upc;
@@ -29,37 +29,39 @@ public class Item {
 	private Integer quantite;
 	
 	@Column(name = "prix_achat")
-	private Double prixAchat;
+	private Double prix_achat;
 	
 	@Column(name = "prix_vendant")
-	private Double prixVendant;
+	private Double prix_vendant;
 	
 	@Column(name = "prix_ajuste")
-	private Double prixAjuste;
+	private Double prix_ajuste;
 
 	
-	public Integer getId_Item() {
-		return id_Item;
+	
+
+	public Integer getId_item() {
+		return id_item;
 	}
 
-	public void setId_Item(Integer id_Item) {
-		this.id_Item = id_Item;
+	public void setId_item(Integer id_item) {
+		this.id_item = id_item;
 	}
 
-	public Integer getId_Commande() {
-		return id_Commande;
+	public Integer getId_commande() {
+		return id_commande;
 	}
 
-	public void setId_Commande(Integer id_Commande) {
-		this.id_Commande = id_Commande;
+	public void setId_commande(Integer id_commande) {
+		this.id_commande = id_commande;
 	}
 
-	public Integer getCode_Produit() {
-		return code_Produit;
+	public Integer getCode_produit() {
+		return code_produit;
 	}
 
-	public void setCode_Produit(Integer code_Produit) {
-		this.code_Produit = code_Produit;
+	public void setCode_produit(Integer code_produit) {
+		this.code_produit = code_produit;
 	}
 
 	public String getUpc() {
@@ -78,29 +80,30 @@ public class Item {
 		this.quantite = quantite;
 	}
 
-	public Double getPrixAchat() {
-		return prixAchat;
+	public Double getPrix_achat() {
+		return prix_achat;
 	}
 
-	public void setPrixAchat(Double prixAchat) {
-		this.prixAchat = prixAchat;
+	public void setPrix_achat(Double prix_achat) {
+		this.prix_achat = prix_achat;
 	}
 
-	public Double getPrixVendant() {
-		return prixVendant;
+	public Double getPrix_vendant() {
+		return prix_vendant;
 	}
 
-	public void setPrixVendant(Double prixVendant) {
-		this.prixVendant = prixVendant;
+	public void setPrix_vendant(Double prix_vendant) {
+		this.prix_vendant = prix_vendant;
 	}
 
-	public Double getPrixAjuste() {
-		return prixAjuste;
+	public Double getPrix_ajuste() {
+		return prix_ajuste;
 	}
 
-	public void setPrixAjuste(Double prixAjuste) {
-		this.prixAjuste = prixAjuste;
+	public void setPrix_ajuste(Double prix_ajuste) {
+		this.prix_ajuste = prix_ajuste;
 	}
+
 	
 	
 }
