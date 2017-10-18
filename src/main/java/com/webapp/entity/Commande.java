@@ -1,6 +1,7 @@
 package com.webapp.entity;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -22,28 +23,28 @@ public class Commande {
     private Integer id_client;
 	
 	@Column(name = "id_utilisateur")
-	    private Integer id_utilisateur;
+	private Integer id_utilisateur;
 
 	@Column(name = "vente_ideal")
-	    private Double vente_ideal;
+	private Double vente_ideal;
 
 	@Column(name = "vente_total")
-	    private Double vente_total;
+	private Double vente_total;
 
 	@Column(name = "commission_type")
-	    private String commission_type;
+	private String commission_type;
 
 	@Column(name = "commision_montant")
-	    private Double commision_montant;
+	private Double commision_montant;
 
 	@Column(name = "adresse")
-	    private String adresse;
+	private String adresse;
 	
 	@Column(name = "date_vente")
-		private LocalDateTime date_vente;
+	private Date date_vente;
 		
 	@Column(name = "date_commission")
-		private LocalDateTime date_commission;
+	private Date date_commission;
 
 	public Integer getId_commande() {
 		return id_commande;
@@ -109,22 +110,23 @@ public class Commande {
 		this.adresse = adresse;
 	}
 
-	public LocalDateTime getDate_vente() {
+	public Date getDate_vente() {
 		return date_vente;
 	}
 
-	public void setDate_vente(LocalDateTime date_vente) {
+	public void setDate_vente(Date date_vente) {
 		this.date_vente = date_vente;
 	}
 
-	public LocalDateTime getDate_commission() {
+	public Date getDate_commission() {
 		return date_commission;
 	}
 
-	public void setDate_commission(LocalDateTime date_commission) {
+	public void setDate_commission(Date date_commission) {
 		this.date_commission = date_commission;
 	}
 
+	
 	
 	
 }
