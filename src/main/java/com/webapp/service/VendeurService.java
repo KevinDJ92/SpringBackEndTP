@@ -28,8 +28,8 @@ public class VendeurService implements IVendeurService {
 	}
 
 	@Override
-	public Vendeur getUtilisateurById(Integer idVendeur) {
-		return vendeurRepository.findOne(idVendeur);
+	public Vendeur getUtilisateurById(Integer idUtilisateur) {
+		return vendeurRepository.findByIdUtilisateur(idUtilisateur);
 	}
 
 	@Override
