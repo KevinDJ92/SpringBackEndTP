@@ -87,4 +87,20 @@ public class ProduitService implements IProduitService {
 
          produitRepository.delete(deleteProduitByUpc);
     }
+    
+//    @Override
+//	public void doDelete(int idProduit) {
+//
+//		Produit deleteProduit = produitRepository.findOne(idProduit);
+//
+//		produitRepository.delete(deleteProduit);
+//	}
+//
+//	@Override
+//	public void doDeleteByUpc(String upc) {
+//
+//		Produit deleteProduitByUpc = produitRepository.findByUpc(upc);
+//
+//		produitRepository.delete(deleteProduitByUpc);
+//	}
 }

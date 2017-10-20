@@ -90,6 +90,24 @@ public class ProduitController {
 	}
 	
 	
+//	@DeleteMapping("/delete-produit")
+//	public ResponseEntity delete(@RequestParam("id") String id) {
+//
+//		produitService.doDelete(Integer.parseInt(id));
+//
+//		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
+//		//mon PostMan trouve rien et râle
+//	}
+//
+//	@DeleteMapping("/delete-produit-upc")
+//	public ResponseEntity deleteByUpc(@RequestParam("id") String upc) {
+//
+//		produitService.doDeleteByUpc(upc);
+//
+//		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
+//		//mon PostMan trouve rien et râle
+//	}
+	
 	
 	@DeleteMapping("/delete-produit")
 	public ResponseEntity delete(@RequestBody Produit produit) {
