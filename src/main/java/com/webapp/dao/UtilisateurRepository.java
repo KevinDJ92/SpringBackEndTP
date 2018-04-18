@@ -11,7 +11,7 @@ import java.util.List;
 public interface UtilisateurRepository extends CrudRepository<Utilisateur, Integer> {
 	List<Utilisateur> findAll();
 
-	Utilisateur findOne(Integer produitId);
+	Utilisateur findOne(Integer UtilisateurId);
 
 	Utilisateur findByNomUtilisateur(String monNom);
 
