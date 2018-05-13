@@ -6,10 +6,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
 @Service
 public class ProduitService implements IProduitService {
-
    
     @Autowired
     ProduitRepository produitRepository;
@@ -18,8 +16,6 @@ public class ProduitService implements IProduitService {
     public List<Produit> getAllProduit() {
         return produitRepository.findAll();
     }
-
- 
     @Override
     public Produit getProduitById(Integer produitId) {
     	return produitRepository.findOne(produitId);
@@ -32,10 +28,7 @@ public class ProduitService implements IProduitService {
 
     @Override
     public Produit doUpdate(Produit monProduit) {
-
-
         Produit updateProduit = produitRepository.findOne(monProduit.getIdProduit());
-
 
         updateProduit.setUpc(monProduit.getUpc());
         updateProduit.setNomProduit(monProduit.getNomProduit());
@@ -52,10 +45,7 @@ public class ProduitService implements IProduitService {
     
     @Override
     public Produit doAdd(Produit monProduit) {
-
-
         Produit addProduit = new Produit();
-
 
         addProduit.setUpc(monProduit.getUpc());
         addProduit.setNomProduit(monProduit.getNomProduit());
@@ -72,35 +62,15 @@ public class ProduitService implements IProduitService {
     
     @Override
     public void doDelete(Produit monProduit) {
-
-
-    	Produit deleteProduit = produitRepository.findOne(monProduit.getIdProduit());
+         Produit deleteProduit = produitRepository.findOne(monProduit.getIdProduit());
 
          produitRepository.delete(deleteProduit);
     }
     
     @Override
     public void doDeleteByUpc(Produit monProduit) {
-
-
-    	Produit deleteProduitByUpc = produitRepository.findByUpc(monProduit.getUpc());
+         Produit deleteProduitByUpc = produitRepository.findByUpc(monProduit.getUpc());
 
          produitRepository.delete(deleteProduitByUpc);
     }
-    
-//    @Override
-//	public void doDelete(int idProduit) {
-//
-//		Produit deleteProduit = produitRepository.findOne(idProduit);
-//
-//		produitRepository.delete(deleteProduit);
-//	}
-//
-//	@Override
-//	public void doDeleteByUpc(String upc) {
-//
-//		Produit deleteProduitByUpc = produitRepository.findByUpc(upc);
-//
-//		produitRepository.delete(deleteProduitByUpc);
-//	}
 }
